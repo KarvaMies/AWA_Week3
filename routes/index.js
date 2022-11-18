@@ -29,7 +29,7 @@ router.post("/todo", (req, res) => {
   console.log(users)
 
   //res.json(null)
-  res.redirect("/")
+  res.redirect("/users/" + name)
 })
 
 module.exports = router;
