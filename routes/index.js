@@ -18,7 +18,7 @@ router.post("/todo", (req, res) => {
     if(user.name == name) {
       found = 1
       user.todos.push(todo)
-      //console.log(user)
+      res.send("Todo added")
       return
     }
   });
@@ -28,8 +28,7 @@ router.post("/todo", (req, res) => {
   }
   console.log(users)
 
-  //res.json(null)
-  res.redirect("/users/" + name)
+  res.send("User added")
 })
 
 module.exports = router;
