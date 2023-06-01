@@ -38,4 +38,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+var port = process.env.PORT || 3000; // Use the port provided by the environment (e.g., for deployment) or default to 3000
+app.listen(port, function() {
+  console.log("Server running on port " + port);
+});
+
 module.exports = app;
