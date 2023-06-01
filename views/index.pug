@@ -3,10 +3,10 @@ extends layout
 block content
   h1 My todos
   form(action="/todo", method="post")
-    label(for="name") Name 
-    input(type="search", name="name", id="input-name")
+    label(for="input-name") Name 
+    input(type="text", name="name", id="input-name")
     br
-    label(for="task") Task         
-    input(type="search", name="task", id="input-task")
+    label(for="input-task") Task         
+    input(type="text", name="task", id="input-task")
     br
     input(type="submit", value="Submit", id="submit-data")
