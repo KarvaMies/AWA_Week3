@@ -2,11 +2,35 @@ extends layout
 
 block content
   h1 My todos
+
+  // Add todo form
   form(action="/todo", method="post")
-    label(for="input-name") Name 
+    label(for="name") Name 
     input(type="text", name="name", id="input-name")
     br
-    label(for="input-task") Task         
+    label(for="task") Task         
     input(type="text", name="task", id="input-task")
     br
     input(type="submit", value="Submit", id="submit-data")
+
+  // Search form
+  form(action=`/user/${searchName}`, method="get")
+    label(for="search-name") Search by Name
+    input(type="text", name="search-name", id="search-name")
+    br
+    input(type="submit", value="Search", id="search")
+
+  if foundUser
+    h2 User Found: #{foundUser.name}
+    if foundUser.todos.length > 0
+      ul
+        each todo in foundUser.todos
+          li= todo
+    else
+      p No todos found for this user
+  
+  else if message
+    p #{message}
+  else
+    p No user or message found
+  
