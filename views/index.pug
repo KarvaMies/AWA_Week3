@@ -5,16 +5,16 @@ block content
 
   // Add todo form
   form(action="/todo", method="post")
-    label(for="name") Name 
-    input(type="text", name="name", id="input-name")
+    label(for="input-name") Name
+    input(type="text", name="input-name", id="input-name")
     br
-    label(for="task") Task         
-    input(type="text", name="task", id="input-task")
+    label(for="input-task") Task
+    input(type="text", name="input-task", id="input-task")
     br
     input(type="submit", value="Submit", id="submit-data")
 
   // Search form
-  form(action=`/user/${searchName}`, method="get")
+  form(action="/user/#{searchName}", method="get")
     label(for="search-name") Search by Name
     input(type="text", name="search-name", id="search-name")
     br
@@ -33,4 +33,3 @@ block content
     p #{message}
   else
     p No user or message found
-  

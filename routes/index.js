@@ -1,12 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
+let users = [];
 
 router.get('/', function(req, res, next) {
   res.render('index');
 });
-
-let users = [];
 
 router.post("/todo", (req, res) => {
   let name = req.body.name;
@@ -35,7 +34,7 @@ router.get("/user/:id", (req, res) => {
     if (req.xhr || req.headers.accept.includes('json')) {
       res.json(foundUser);
     } else {
-      res.render('index', {foundUser: foundUser });
+      res.render('index', { foundUser: foundUser });
     }
   } else {
     console.log("foundUser is false");
