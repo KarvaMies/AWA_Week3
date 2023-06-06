@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 
-const port = 3000;
+//const port = 3000;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -42,6 +42,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(port, () => console.log(`Server listening on port ${port}!`));
+//app.listen(port, () => console.log(`Server listening on port ${port}!`));
 
 module.exports = app;
